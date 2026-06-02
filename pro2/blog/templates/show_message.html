@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Django Messages</title>
+
+    <style>
+        body{
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            padding: 40px;
+        }
+
+        .message{
+            padding: 15px;
+            margin-bottom: 15px;
+            border-radius: 8px;
+            color: white;
+            font-size: 18px;
+        }
+
+        .debug{
+            background-color: gray;
+        }
+
+        .info{
+            background-color: blue;
+        }
+
+        .success{
+            background-color: green;
+        }
+
+        .warning{
+            background-color: orange;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Django Messages Framework</h1>
+
+    {% if messages %}
+        {% for message in messages %}
+            <div class="message {{ message.tags }}">
+                {{ message }}
+            </div>
+        {% endfor %}
+    {% endif %}
+
+</body>
+</html>
